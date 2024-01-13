@@ -1,0 +1,166 @@
+---
+title: "Historical and Recent Trends in the Forecasting Literature"
+subtitle: "Talk for the WARN-D Friday Science Meeting"
+editor: visual
+author: 
+  - name: "Björn Siepe"
+    orcid: 0000-0002-9558-4648
+    email: bjoern.siepe@uni-marburg.de
+    institute: "Psychological Methods Lab, University of Marburg"
+date: "2024-02-16"
+# from: markdown+emoji
+format: 
+  clean-revealjs:
+    incremental: true
+    embed-resources: true
+    auto-stretch: true
+    code-block-bg: true
+    progress: true
+bibliography: bibliography.bib
+---
+
+# Forecasting Competitions {background-color="#40666e"}
+
+## History
+
+::: columns
+::: {.column width="50%"}
+### Critical statisticians
+
+-   We should be looking for the true model!
+
+-   Maybe you do not know how to model with ARIMA...
+
+-   
+
+    > I suspect it is more likely to depend on the skill of the analyst … these authors are more at home with simple procedures than with Box-Jenkins. (Chatfield)
+:::
+
+::: {.column width="50%"}
+### Makridakis & Hibon (1979)
+
+-   Our Empirical evidence disagrees
+
+-   Our Empirical evidence disagrees
+
+-   
+
+    > might be useful for Dr Chatfield to read some of the psychological literature quoted in the main paper, and he can then learn a little more about biases
+:::
+:::
+
+::: footnote
+Mostly based on Hyndman (insert citation)
+:::
+
+## M-Competitions
+
++-------------+----------+----------------+---------------------------------------------------------+
+| Competition | Year     | N° Time Series | Insights/Novelty                                        |
++=============+==========+================+=========================================================+
+| M1          | 1982     | 1001           | -   Easy methods work well                              |
+|             |          |                |                                                         |
+|             |          |                | -   Combining methods works well                        |
+|             |          |                |                                                         |
+|             |          |                | -   Changed forecasting forever                         |
++-------------+----------+----------------+---------------------------------------------------------+
+| M2          | 1993     | 29             | -   not really relevant                                 |
++-------------+----------+----------------+---------------------------------------------------------+
+| M3          | 2000     | 3003           | -   Somewhat simple models work well with modifications |
++-------------+----------+----------------+---------------------------------------------------------+
+| M4          | 2020     | 100,000        | -   Combination of ML and Stats works well, pure ML not |
+|             |          |                |                                                         |
+|             |          |                | -   Probabilistic Prediction                            |
++-------------+----------+----------------+---------------------------------------------------------+
+| M5          | 2021     | 42,000         | -   Hierarchical Time Series                            |
+|             |          |                |                                                         |
+|             |          |                | -   Ensembles + Pure ML works well                      |
++-------------+----------+----------------+---------------------------------------------------------+
+| M6          | 2022     | 100            | ... to be continued                                     |
++-------------+----------+----------------+---------------------------------------------------------+
+
+## Utility and Issues with Competitions
+
+-   Koning tests of results
+-   Fildes Forecasting competitions
+-  allows some form of cumulative (methodological) science
+
+# Model Uncertainty and Combination {background-color="#40666e"}
+
+## Code
+
+damn
+
+## The beauty of simple models
+
+Test stuff [@wang2023]
+
+this
+
+# Probabilistic Forecasting {background-color="#40666e"}
+## Moving towards probabilistic forecasting
+Weather forecasting used probabilistic forecasting surprisingly early:
+
+> The probability of rain was much smaller than at other times (Dalton, 1793)
+
+Popularized by Epstein 1969 Stochastic dynamic prediction
+
+
+::: aside
+Based on [@murphy1998]
+:::
+
+
+## Uncertainty in Forecasting
+
+
+## Communicating uncertainty
+https://www.weather.gov/mrx/probeducation
+
+# Mixed Models {background-color="#40666e"}
+
+## Improving what we already have
+
+::: callout-tip
+## Flexible Mixed Model Formulation
+
+From
+
+$$
+y = X\beta + Z\upsilon + \epsilon
+$$
+
+to
+
+$$y = ml_{fixed}(X)+Z\upsilon + \epsilon$$[@kilian2023]
+:::
+
+# Issues
+
+## Methodolgical Issues in the Forecasting Literature
+
+-   Reproducibility Issues (Boylan)
+- 'Winner takes it all'? (see [@strobl2021])
+
+
+
+## Me
+
+{{< fa house >}} [Feel](https://bsiepe.github.io/)
+
+{{< fa brands twitter >}} [free](https://twitter.com/b_siepe)
+
+{{< fa cloud >}} [to](https://bsky.app/profile/bsiepe.bsky.social)
+
+{{< fa at >}} [contact](bjoern.siepe@uni-marburg.de)
+
+{{< fa brands github >}} [me](https://github.com/bsiepe)
+
+bjoern.siepe\@uni-marburg.de
+
+## References {.scrollable} {.smaller}
+
+::: {#refs}
+:::
+
+# Tools & Stuff
