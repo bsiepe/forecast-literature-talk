@@ -1,0 +1,33 @@
+---
+title: "forecast-literature-talk"
+subtitle: "Bla"
+editor: visual
+author: "Björn Siepe"
+email: bjoern.siepe@uni-marburg.de
+institute: "Psychological Methods Lab, University of Marburg"
+date: "2024-02-16"
+# from: markdown+emoji
+format: clean-revealjs
+    # incremental: true
+    # embed-resources: true
+    # # footer: "Dynamische Netzwerke"
+    # slide-number: true
+    # auto-stretch: false
+    # echo: true
+    # code-block-bg: true
+    # code-block-border-left: "#31BAE9"
+    # show-notes: false
+    # progress: true
+    # pdf-page-height-offset: 5
+---
+
+## Quarto
+Test
+
+
+## Bullets
+this
+
+
+## Code
+damn

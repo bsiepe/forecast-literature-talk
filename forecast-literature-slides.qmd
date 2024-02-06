@@ -19,6 +19,24 @@ format:
 bibliography: bibliography.bib
 ---
 
+# Introduction {background-color="#40666e"}
+
+## Why talk about this topic?
+
+::: incremental
+the secret reason:
+
+![](figures/trojan_horse_meme.jpg){fig-align="center"}
+:::
+
+## Ok but really, why should you care?
+
+![](figures/nature_fig1.png){fig-align="center"}
+
+::: footnote{.smaller}
+"The quiet revolution of numerical weather prediction" [@bauerQuietRevolutionNumerical2015]
+:::
+
 # Forecasting Competitions {background-color="#40666e"}
 
 ## History
@@ -39,9 +57,9 @@ bibliography: bibliography.bib
 ::: {.column width="50%"}
 ### Makridakis & Hibon (1979)
 
--   Our Empirical evidence disagrees
+-   Our Empirical evidence disagrees <br/><br/>
 
--   Our Empirical evidence disagrees
+-   Of course we do <br/> <br/>
 
 -   
 
@@ -49,11 +67,11 @@ bibliography: bibliography.bib
 :::
 :::
 
-::: footnote
-Mostly based on Hyndman (insert citation)
+::: footnote{.smaller}
+Mostly based on @hyndman2020
 :::
 
-## M-Competitions
+## M-Competitions {.smaller}
 
 +-------------+----------+----------------+---------------------------------------------------------+
 | Competition | Year     | N° Time Series | Insights/Novelty                                        |
@@ -64,7 +82,7 @@ Mostly based on Hyndman (insert citation)
 |             |          |                |                                                         |
 |             |          |                | -   Changed forecasting forever                         |
 +-------------+----------+----------------+---------------------------------------------------------+
-| M2          | 1993     | 29             | -   not really relevant                                 |
+| M2          | 1993     | 29             | -   Not really relevant                                 |
 +-------------+----------+----------------+---------------------------------------------------------+
 | M3          | 2000     | 3003           | -   Somewhat simple models work well with modifications |
 +-------------+----------+----------------+---------------------------------------------------------+
@@ -76,18 +94,31 @@ Mostly based on Hyndman (insert citation)
 |             |          |                |                                                         |
 |             |          |                | -   Ensembles + Pure ML works well                      |
 +-------------+----------+----------------+---------------------------------------------------------+
-| M6          | 2022     | 100            | ... to be continued                                     |
+| M6          | 2022     | 100            | -   ... to be continued                                 |
 +-------------+----------+----------------+---------------------------------------------------------+
+
+- The M5 uncertainty competition: Results, findings and conclusions TODO
+
+
 
 ## Utility and Issues with Competitions
 
--   Koning tests of results
+-   Utility
+    -   Empirical evidence
+    -   Benchmarking
+    -   Methodological development and cumulative science
+    
+-   Issues
+    -   somewhat arbitrary conditions
+    -   vibe-based analysis of results [@koning2005]
+    -   Generalizability is questionable
+
+
 -   Fildes Forecasting competitions
--  allows some form of cumulative (methodological) science
 
 # Model Uncertainty and Combination {background-color="#40666e"}
 
-## Code
+## Search for the true model?
 
 damn
 
@@ -97,29 +128,52 @@ Test stuff [@wang2023]
 
 this
 
+## Relevance for psychology
+
+-   Model uncertainty is often neglected, both in inferential and predictive modeling [@kaplanQuantificationModelUncertainty2021]
+-   Current predictive literature often seems to neglect model uncertainty
+-   Theoretically linked to the complex systems literature
+
 # Probabilistic Forecasting {background-color="#40666e"}
+
 ## Moving towards probabilistic forecasting
+
 Weather forecasting used probabilistic forecasting surprisingly early:
 
 > The probability of rain was much smaller than at other times (Dalton, 1793)
 
 Popularized by Epstein 1969 Stochastic dynamic prediction
 
-
 ::: aside
-Based on [@murphy1998]
+Based on [@murphyEarlyHistoryProbability1998]
 :::
 
+## Proper representation of uncertainty
 
-## Uncertainty in Forecasting
+-   what is even meant here?
+-   show plot by gneiting in the appendix
+-   show different forms
 
+## Probabilistic forecasting methods
+
+-   explain basic ideas: go beyond probability of binary events
 
 ## Communicating uncertainty
+
 https://www.weather.gov/mrx/probeducation
+
+## Relevance for psychology
+
+-   Practically linked to decision theory, e.g., for JITAIs
+
+-   Highly relevant in healthcare
 
 # Mixed Models {background-color="#40666e"}
 
-## Improving what we already have
+## Extending mixed models
+
+-   not 'forecasting' literature, but ML more broadly
+-   use of random effects in machine learning has gained attention
 
 ::: callout-tip
 ## Flexible Mixed Model Formulation
@@ -135,14 +189,22 @@ to
 $$y = ml_{fixed}(X)+Z\upsilon + \epsilon$$[@kilian2023]
 :::
 
+## Relevance for Psychology
+
+-   Improving on what we already have
+-   Lots of flexibility
+-   For example:
+    -   lasso with random effects
+    -   random forest/trees with random effects
+    -   boosting with random effects
+    -   ...
+
 # Issues
 
 ## Methodolgical Issues in the Forecasting Literature
 
 -   Reproducibility Issues (Boylan)
-- 'Winner takes it all'? (see [@strobl2021])
-
-
+-   'Winner takes it all'? (see [@strobl2021])
 
 ## Me
 
@@ -164,3 +226,7 @@ bjoern.siepe\@uni-marburg.de
 :::
 
 # Tools & Stuff
+
+-   R: `forecast` package is invaluable
+
+-   Python:
