@@ -7,6 +7,7 @@ author:
     orcid: 0000-0002-9558-4648
     email: bjoern.siepe@uni-marburg.de
     institute: "Psychological Methods Lab, University of Marburg"
+    url: "https://bsiepe.github.io/talks"
 date: "2024-02-16"
 # from: markdown+emoji
 format: 
@@ -67,10 +68,6 @@ the secret reason:
 :::
 :::
 
-::: footnote{.smaller}
-Mostly based on @hyndman2020
-:::
-
 ## M-Competitions {.smaller}
 
 +-------------+----------+----------------+---------------------------------------------------------+
@@ -97,36 +94,56 @@ Mostly based on @hyndman2020
 | M6          | 2022     | 100            | -   ... to be continued                                 |
 +-------------+----------+----------------+---------------------------------------------------------+
 
-- The M5 uncertainty competition: Results, findings and conclusions TODO
+## Utility of Competitions
 
+::: columns
+::: {.column width="50%"}
+### Advantages
 
+-   Empirical evidence
+-   Benchmarking
+-   Methodological development and cumulative science [@fildes2004]
+:::
 
-## Utility and Issues with Competitions
+::: {.column width="50%"}
+### Issues
 
--   Utility
-    -   Empirical evidence
-    -   Benchmarking
-    -   Methodological development and cumulative science
-    
--   Issues
-    -   somewhat arbitrary conditions
-    -   vibe-based analysis of results [@koning2005]
-    -   Generalizability is questionable
+-   arbitrary conditions
+-   vibe-based analysis of results [@koning2005]
+-   Questionable generalizability [@fildes2004]
+:::
+:::
 
+# Model Selection, Uncertainty & Combination {background-color="#40666e"}
 
--   Fildes Forecasting competitions
+## Model selection
 
-# Model Uncertainty and Combination {background-color="#40666e"}
+The beauty of simple models:
 
-## Search for the true model?
+-   Simple models often outperform more complex ones, even on larger data sets (M1, M3)
 
-damn
+-   Simple models are important benchmarks, even in more complex settings
 
-## The beauty of simple models
+Selecting a single model:
 
-Test stuff [@wang2023]
+-   ignores uncertainty about this selection (cite Kaplan)
+-   tends to perform poorly in forecasting competitions
+
+Move away from model selection to model combination
+
+## Model combination
+
+Test stuff
 
 this
+
+## Ensemble modeling
+
+![](figures/ensemble_prediction.png){fig-align="center"}
+
+::: footnote{.smaller}
+Met Office UK & @bauerQuietRevolutionNumerical2015
+:::
 
 ## Relevance for psychology
 
@@ -135,6 +152,16 @@ this
 -   Theoretically linked to the complex systems literature
 
 # Probabilistic Forecasting {background-color="#40666e"}
+
+## Probabilistic forecasting methods
+
+![](figures/gneiting_uncertainty_fig1.jpeg){fig-align="center"}
+
+## What is probabilistic forecasting?
+
+-   what is even meant here?
+-   show plot by gneiting in the appendix
+-   show different forms
 
 ## Moving towards probabilistic forecasting
 
@@ -148,16 +175,6 @@ Popularized by Epstein 1969 Stochastic dynamic prediction
 Based on [@murphyEarlyHistoryProbability1998]
 :::
 
-## Proper representation of uncertainty
-
--   what is even meant here?
--   show plot by gneiting in the appendix
--   show different forms
-
-## Probabilistic forecasting methods
-
--   explain basic ideas: go beyond probability of binary events
-
 ## Communicating uncertainty
 
 https://www.weather.gov/mrx/probeducation
@@ -166,17 +183,14 @@ https://www.weather.gov/mrx/probeducation
 
 -   Practically linked to decision theory, e.g., for JITAIs
 
--   Highly relevant in healthcare
+-   Highly relevant in healthcare settings in general
 
 # Mixed Models {background-color="#40666e"}
 
 ## Extending mixed models
 
--   not 'forecasting' literature, but ML more broadly
--   use of random effects in machine learning has gained attention
-
 ::: callout-tip
-## Flexible Mixed Model Formulation
+## Flexible Mixed Model
 
 From
 
@@ -186,12 +200,18 @@ $$
 
 to
 
-$$y = ml_{fixed}(X)+Z\upsilon + \epsilon$$[@kilian2023]
+$$y = ml_{fixed}(X)+Z\upsilon + \epsilon$$
+
+[@kilianMixedEffectsMachine2023]
 :::
+
+-   not 'forecasting' literature, but ML more broadly
+-   use of random effects in machine learning has gained attention
 
 ## Relevance for Psychology
 
 -   Improving on what we already have
+-   Current papers: often rather ad-hoc combinations of forecasts
 -   Lots of flexibility
 -   For example:
     -   lasso with random effects
@@ -199,15 +219,39 @@ $$y = ml_{fixed}(X)+Z\upsilon + \epsilon$$[@kilian2023]
     -   boosting with random effects
     -   ...
 
-# Issues
+# Summary
 
-## Methodolgical Issues in the Forecasting Literature
+## Issues
 
--   Reproducibility Issues (Boylan)
--   'Winner takes it all'? (see [@strobl2021])
+::: columns
+::: {.column width="50%"}
+### Methodology
+
+-   Reproducibility Issues [@boylanReproducibilityForecastingResearch2015]
+-   'Winner takes it all'? (see @stroblOneMethodFits2022)
+:::
+
+::: {.column width="50%"}
+### Transfer to Psychology
+
+-   Data structure often not comparable [@makridakisForecastingSocialSettings2020]
+-   Much of it is known, but not used
+
+:::
+:::
+
+## Takeaways
+
+1. Forecasting competitions can lead to methodological improvement
+2. Model uncertainty and model combination are integral parts of forecasting
+3. Probabilistic forecasting is important for decision making
+4. Combining predictions is challenging
+
 
 ## Me
 
+::: columns
+::: {.column width="40%"}
 {{< fa house >}} [Feel](https://bsiepe.github.io/)
 
 {{< fa brands twitter >}} [free](https://twitter.com/b_siepe)
@@ -217,16 +261,23 @@ $$y = ml_{fixed}(X)+Z\upsilon + \epsilon$$[@kilian2023]
 {{< fa at >}} [contact](bjoern.siepe@uni-marburg.de)
 
 {{< fa brands github >}} [me](https://github.com/bsiepe)
+:::
 
-bjoern.siepe\@uni-marburg.de
+::: {.column width="60%"}
 
-## References {.scrollable} {.smaller}
+![](figures/talks_qrcode.svg)
+
+
+:::
+:::
+
+## References {.smaller .scrollable}
 
 ::: {#refs}
 :::
 
-# Tools & Stuff
+<!-- # Tools & Stuff -->
 
--   R: `forecast` package is invaluable
+<!-- -   R: `forecast` package is invaluable -->
 
--   Python:
+<!-- -   Python: -->
