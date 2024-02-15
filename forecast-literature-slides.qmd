@@ -6,8 +6,10 @@ author:
   - name: "Björn Siepe"
     orcid: 0000-0002-9558-4648
     email: bjoern.siepe@uni-marburg.de
-    institute: "Psychological Methods Lab, University of Marburg"
-    url: "https://bsiepe.github.io/talks"
+    affiliations: 
+      - name: "Psychological Methods Lab, University of Marburg"
+        city: "Slides at bsiepe.github.io/talks"
+    
 date: "2024-02-16"
 # from: markdown+emoji
 format: 
@@ -30,12 +32,12 @@ the secret reason:
 ![](figures/trojan_horse_meme.jpg){fig-align="center"}
 :::
 
-## Ok but really, why should you care?
+## Ok but really, why should you care? {.smaller}
 
-![](figures/nature_fig1.png){fig-align="center"}
+::: fragment
+"The quiet revolution of numerical weather prediction" [@bauerQuietRevolutionNumerical2015]:
 
-::: footnote{.smaller}
-"The quiet revolution of numerical weather prediction" [@bauerQuietRevolutionNumerical2015]
+![](figures/nature_fig1.png){.absolute top="150" left="100" width="750" height="450" cap-location="bottom"}
 :::
 
 # Forecasting Competitions {background-color="#40666e"}
@@ -64,7 +66,7 @@ the secret reason:
 
 -   
 
-    > might be useful for Dr Chatfield to read some of the psychological literature quoted in the main paper, and he can then learn a little more about biases
+    > might be useful for Dr. Chatfield to read some of the psychological literature quoted in the main paper, and he can then learn a little more about biases
 :::
 :::
 
@@ -73,10 +75,8 @@ the secret reason:
 +-------------+----------+----------------+---------------------------------------------------------+
 | Competition | Year     | N° Time Series | Insights/Novelty                                        |
 +=============+==========+================+=========================================================+
-| M1          | 1982     | 1001           | -   Easy methods work well                              |
-|             |          |                |                                                         |
-|             |          |                | -   Combining methods works well                        |
-|             |          |                |                                                         |
+| M1          | 1982     | 1001           | -   **Simple models** work well                         |
+|             |          |                | -   **Combining forecasts** works well                  |
 |             |          |                | -   Changed forecasting forever                         |
 +-------------+----------+----------------+---------------------------------------------------------+
 | M2          | 1993     | 29             | -   Not really relevant                                 |
@@ -85,9 +85,9 @@ the secret reason:
 +-------------+----------+----------------+---------------------------------------------------------+
 | M4          | 2020     | 100,000        | -   Combination of ML and Stats works well, pure ML not |
 |             |          |                |                                                         |
-|             |          |                | -   Probabilistic Prediction                            |
+|             |          |                | -   **Probabilistic Prediction**                        |
 +-------------+----------+----------------+---------------------------------------------------------+
-| M5          | 2021     | 42,000         | -   Hierarchical Time Series                            |
+| M5          | 2021     | 42,000         | -   **Hierarchical Time Series**                        |
 |             |          |                |                                                         |
 |             |          |                | -   Ensembles + Pure ML works well                      |
 +-------------+----------+----------------+---------------------------------------------------------+
@@ -111,142 +111,149 @@ the secret reason:
 -   arbitrary conditions
 -   vibe-based analysis of results [@koning2005]
 -   Questionable generalizability [@fildes2004]
+-   Reproducibility Issues? [@boylanReproducibilityForecastingResearch2015]
+-   'Winner takes it all'? (see @stroblOneMethodFits2022
 :::
 :::
 
 # Model Selection, Uncertainty & Combination {background-color="#40666e"}
 
-## Model selection
+## Model selection {.incremental .smaller}
 
-The beauty of simple models:
+::: fragment
+"Typical" Workflow:
 
--   Simple models often outperform more complex ones, even on larger data sets (M1, M3)
+```{mermaid}
+flowchart LR
+    A(Use fancy models) --> B(Select best one)
+    B --> C(Forecast)
+    C --> D[Profit]
+```
+:::
+::: fragment
+Problem?
+:::
+::: fragment
+-   Use simple models as benchmarks (see M-competitions, @makridakisStatisticalMachineLearning2018
+:::
 
--   Simple models are important benchmarks, even in more complex settings
-
+::: fragment
 Selecting a single model:
 
--   ignores uncertainty about this selection (cite Kaplan)
--   tends to perform poorly in forecasting competitions
-
-Move away from model selection to model combination
+-   ignores uncertainty about this selection [@kaplanQuantificationModelUncertainty2021]
+-   tends to perform poorly in many forecasting settings [@chatfieldModelUncertaintyForecast1996]
+:::
 
 ## Model combination
 
-Test stuff
+::: fragment
+::: callout-tip
+## 'Law' of forecast combination
 
-this
+'The results have been virtually unanimous: combining multiple forecasts leads to increased forecast accuracy. In many cases one can make dramatic performance improvements by simply averaging the forecasts.' [@clemen1989]
+:::
+:::
+
+::: fragment
+Important:
+
+-   Which models to choose? Go diverse [@wangForecastCombinations50year2023]
+-   How to aggregate? Hard to beat the mean [@aastveit]
+:::
 
 ## Ensemble modeling
 
+Two sources of uncertainty:
+
 ![](figures/ensemble_prediction.png){fig-align="center"}
 
-::: footnote{.smaller}
+::: footnote
 Met Office UK & @bauerQuietRevolutionNumerical2015
 :::
 
 ## Relevance for psychology
 
--   Model uncertainty is often neglected, both in inferential and predictive modeling [@kaplanQuantificationModelUncertainty2021]
--   Current predictive literature often seems to neglect model uncertainty
--   Theoretically linked to the complex systems literature
+-   Compare complex models to simple ones [@makridakisStatisticalMachineLearning2018, @makridakis2022]
+-   Model uncertainty often neglected in inferential and predictive modeling [@kaplanQuantificationModelUncertainty2021]
+-   Many ways to achieve this:
+-   taking the mean
+-   Bayesian approaches [@yaoBayesianHierarchicalStacking2022, @yaoUsingStackingAverage2018, @dorieStanBARTCausal2022]
+-   Machine learning approaches (ensemble learning, trees, bagging, etc.) [@petropoulosExploringSourcesUncertainty2018]
 
 # Probabilistic Forecasting {background-color="#40666e"}
 
 ## Probabilistic forecasting methods
 
-![](figures/gneiting_uncertainty_fig1.jpeg){fig-align="center"}
+::: fragment
+::: callout-tip
+## Long history of probabilistic weather forecasting
 
-## What is probabilistic forecasting?
-
--   what is even meant here?
--   show plot by gneiting in the appendix
--   show different forms
-
-## Moving towards probabilistic forecasting
-
-Weather forecasting used probabilistic forecasting surprisingly early:
-
-> The probability of rain was much smaller than at other times (Dalton, 1793)
-
-Popularized by Epstein 1969 Stochastic dynamic prediction
-
-::: aside
-Based on [@murphyEarlyHistoryProbability1998]
+> The probability of rain was much smaller than at other times (Dalton, 1793, based on @murphyEarlyHistoryProbability1998
+:::
 :::
 
-## Communicating uncertainty
+::: fragment
+![](figures/gneiting_uncertainty_fig1.jpeg){.absolute top="285" left="100" width="600" height="380"}
+:::
 
-https://www.weather.gov/mrx/probeducation
+## Some more stuff on probabilistic forecasting
 
 ## Relevance for psychology
 
--   Practically linked to decision theory, e.g., for JITAIs
+::: fragment
+-   Practically linked to decision theory in health settings, e.g., for JITAIs [@begoliNeedUncertaintyQuantification2019, @chen2021]
+:::
 
--   Highly relevant in healthcare settings in general
+::: fragment
+![](figures/uncertainty_healthcare.png)
+:::
 
-# Mixed Models {background-color="#40666e"}
+# Combining Information {background-color="#40666e"}
 
-## Extending mixed models
+## Extending mixed models{.smaller}
 
+-   use of random effects  gained attention in machine learning literature [@saldittGradientTreeBoosting2023]
+-   accounting for dependence, less parameters to estimate [@kilianMixedEffectsMachine2023]
+
+::: fragment
 ::: callout-tip
 ## Flexible Mixed Model
 
 From
 
 $$
-y = X\beta + Z\upsilon + \epsilon
+\hat{y} = \underbrace{X\beta}_{\text{fixed effects}} + \underbrace{Z\upsilon}_{\text{random effects}} 
 $$
 
 to
 
-$$y = ml_{fixed}(X)+Z\upsilon + \epsilon$$
+$$
+\hat{y} = \overbrace{ml_{fixed}(X)}^{\text{fixed effects}}+\overbrace{Z\upsilon}^{\text{random effects}}
+$$
 
 [@kilianMixedEffectsMachine2023]
 :::
-
--   not 'forecasting' literature, but ML more broadly
--   use of random effects in machine learning has gained attention
+:::
 
 ## Relevance for Psychology
 
+::: fragment
+-   Current combinations of 'idiographic' and 'nomethetic' forecasts: often ad-hoc
 -   Improving on what we already have
--   Current papers: often rather ad-hoc combinations of forecasts
--   Lots of flexibility
--   For example:
-    -   lasso with random effects
-    -   random forest/trees with random effects
-    -   boosting with random effects
-    -   ...
-
-# Summary
-
-## Issues
-
-::: columns
-::: {.column width="50%"}
-### Methodology
-
--   Reproducibility Issues [@boylanReproducibilityForecastingResearch2015]
--   'Winner takes it all'? (see @stroblOneMethodFits2022)
 :::
 
-::: {.column width="50%"}
-### Transfer to Psychology
-
--   Data structure often not comparable [@makridakisForecastingSocialSettings2020]
--   Much of it is known, but not used
-
+::: fragment
+![](figures/mixed-effects-ml.png)
 :::
-:::
+
+# Summary {background-color="#40666e"}
 
 ## Takeaways
 
-1. Forecasting competitions can lead to methodological improvement
-2. Model uncertainty and model combination are integral parts of forecasting
-3. Probabilistic forecasting is important for decision making
-4. Combining predictions is challenging
-
+1.  Forecasting competitions can lead to methodological improvement
+2.  Model uncertainty and model combination are integral parts of forecasting
+3.  Probabilistic forecasting is important for decision making
+4.  Combining predictions is challenging, but lots of cool stuff in the making
 
 ## Me
 
@@ -261,13 +268,12 @@ $$y = ml_{fixed}(X)+Z\upsilon + \epsilon$$
 {{< fa at >}} [contact](bjoern.siepe@uni-marburg.de)
 
 {{< fa brands github >}} [me](https://github.com/bsiepe)
+
+bjoern.siepe\@uni-marburg.de
 :::
 
 ::: {.column width="60%"}
-
-![](figures/talks_qrcode.svg)
-
-
+Slides at bsiepe.github.io/talks ![](figures/talks_qrcode.png)
 :::
 :::
 
@@ -276,8 +282,34 @@ $$y = ml_{fixed}(X)+Z\upsilon + \epsilon$$
 ::: {#refs}
 :::
 
-<!-- # Tools & Stuff -->
+# Appendix
 
-<!-- -   R: `forecast` package is invaluable -->
+## Interesting packages
 
-<!-- -   Python: -->
+::: {.panel-tabset}
+
+### R
+```{.r}
+#|eval: false
+library(forecast)    # OG package for time series forecasting
+library(stan4bart)   # full-on probabilistic, multilevel, model combination
+library(forecastHybrid)  # for model combination
+library(Mcomp)       # data from m competitions
+library(gpboost)     # xgboost-like, but probabilistic and multilevel
+
+```
+
+
+### Python
+```{.python}
+#|eval: false
+import sktime   # for time series forecasting with sklearn-like interface
+import skpro    # for probabilistic forecasting 
+import gluonts  # for probabilistic forecasting, including deep-learning
+import ngboost  # xgboost-like, but probabilistic!
+
+```
+
+:::
+
+## Example code
