@@ -1,1 +1,1 @@
-The quarto document used to create the slides can be found under `forecast-literature-talk.qmd`. 
+The quarto document used to create the slides can be found under `forecast-literature-slides.qmd`. 
