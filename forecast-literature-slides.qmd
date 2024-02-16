@@ -46,7 +46,7 @@ the secret reason:
 
 ::: columns
 ::: {.column width="50%"}
-### Critical statisticians
+### Critical statisticians 
 
 -   We should be looking for the true model!
 
@@ -54,7 +54,7 @@ the secret reason:
 
 -   
 
-    > I suspect it is more likely to depend on the skill of the analyst … these authors are more at home with simple procedures than with Box-Jenkins. (Chatfield)
+    > I suspect it is more likely to depend on the skill of the analyst … these authors are more at home with simple procedures than with Box-Jenkins. (Chatfield, based on @hyndmanBriefHistoryForecasting2020
 :::
 
 ::: {.column width="50%"}
@@ -94,7 +94,7 @@ the secret reason:
 | M6          | 2022     | 100            | -   ... to be continued                                 |
 +-------------+----------+----------------+---------------------------------------------------------+
 
-## Utility of Competitions
+## Utility of Competitions {.smaller}
 
 ::: columns
 ::: {.column width="50%"}
@@ -130,9 +130,11 @@ flowchart LR
     C --> D[Profit]
 ```
 :::
+
 ::: fragment
 Problem?
 :::
+
 ::: fragment
 -   Use simple models as benchmarks (see M-competitions, @makridakisStatisticalMachineLearning2018
 :::
@@ -144,7 +146,7 @@ Selecting a single model:
 -   tends to perform poorly in many forecasting settings [@chatfieldModelUncertaintyForecast1996]
 :::
 
-## Model combination
+## Model combination {.smaller}
 
 ::: fragment
 ::: callout-tip
@@ -155,15 +157,15 @@ Selecting a single model:
 :::
 
 ::: fragment
-Important:
-
--   Which models to choose? Go diverse [@wangForecastCombinations50year2023]
--   How to aggregate? Hard to beat the mean [@aastveit]
+-   Many ways to combine forecasts [@wangForecastCombinations50year2023; @aastveitEvolutionForecastDensity2018]:
+    -   Simple averaging
+    -   Bayesian approaches [@yaoBayesianHierarchicalStacking2022; @yaoUsingStackingAverage2018; @dorieStanBARTCausal2022]
+    -   Machine learning approaches (ensemble learning, trees, bagging, stacking, deep learning, etc.) [@petropoulosExploringSourcesUncertainty2018; @hastie2017]
 :::
 
-## Ensemble modeling
+## Ensemble modeling {.smaller}
 
-Two sources of uncertainty:
+Two sources of uncertainty [@gneitingProbabilisticForecasting2014]:
 
 ![](figures/ensemble_prediction.png){fig-align="center"}
 
@@ -173,12 +175,8 @@ Met Office UK & @bauerQuietRevolutionNumerical2015
 
 ## Relevance for psychology
 
--   Compare complex models to simple ones [@makridakisStatisticalMachineLearning2018, @makridakis2022]
+-   Simple models as benchmarks [@makridakisStatisticalMachineLearning2018; @makridakis2022]
 -   Model uncertainty often neglected in inferential and predictive modeling [@kaplanQuantificationModelUncertainty2021]
--   Many ways to achieve this:
--   taking the mean
--   Bayesian approaches [@yaoBayesianHierarchicalStacking2022, @yaoUsingStackingAverage2018, @dorieStanBARTCausal2022]
--   Machine learning approaches (ensemble learning, trees, bagging, etc.) [@petropoulosExploringSourcesUncertainty2018]
 
 # Probabilistic Forecasting {background-color="#40666e"}
 
@@ -188,7 +186,7 @@ Met Office UK & @bauerQuietRevolutionNumerical2015
 ::: callout-tip
 ## Long history of probabilistic weather forecasting
 
-> The probability of rain was much smaller than at other times (Dalton, 1793, based on @murphyEarlyHistoryProbability1998
+'The probability of rain was much smaller than at other times.' (Dalton, 1793, based on @murphyEarlyHistoryProbability1998
 :::
 :::
 
@@ -196,12 +194,10 @@ Met Office UK & @bauerQuietRevolutionNumerical2015
 ![](figures/gneiting_uncertainty_fig1.jpeg){.absolute top="285" left="100" width="600" height="380"}
 :::
 
-## Some more stuff on probabilistic forecasting
-
 ## Relevance for psychology
 
 ::: fragment
--   Practically linked to decision theory in health settings, e.g., for JITAIs [@begoliNeedUncertaintyQuantification2019, @chen2021]
+-   Practically linked to decision theory in health settings, e.g., for JITAIs [@begoliNeedUncertaintyQuantification2019; @chen2021]
 :::
 
 ::: fragment
@@ -210,10 +206,9 @@ Met Office UK & @bauerQuietRevolutionNumerical2015
 
 # Combining Information {background-color="#40666e"}
 
-## Extending mixed models{.smaller}
+## Extending mixed models {.smaller}
 
--   use of random effects  gained attention in machine learning literature [@saldittGradientTreeBoosting2023]
--   accounting for dependence, less parameters to estimate [@kilianMixedEffectsMachine2023]
+-   use of random effects gained attention in machine learning literature [@saldittGradientTreeBoosting2023; @sigristGaussianProcessBoosting2022; @kilianMixedEffectsMachine2023; @wortweinNeuralMixedEffects2023]
 
 ::: fragment
 ::: callout-tip
@@ -235,11 +230,11 @@ $$
 :::
 :::
 
-## Relevance for Psychology
+## Relevance for Psychology {.smaller}
 
 ::: fragment
--   Current combinations of 'idiographic' and 'nomethetic' forecasts: often ad-hoc
 -   Improving on what we already have
+-   Current combinations of 'idiographic' and 'nomethetic' forecasts: often ad-hoc
 :::
 
 ::: fragment
@@ -254,6 +249,10 @@ $$
 2.  Model uncertainty and model combination are integral parts of forecasting
 3.  Probabilistic forecasting is important for decision making
 4.  Combining predictions is challenging, but lots of cool stuff in the making
+
+::: fragment
+[![giphy.com/goodfortunesonly](figures/giphy-future.gif){width="280"}](https://i.giphy.com/media/OJac5MRF6xJpqQAcR5/giphy.gif)
+:::
 
 ## Me
 
@@ -286,30 +285,29 @@ Slides at bsiepe.github.io/talks ![](figures/talks_qrcode.png)
 
 ## Interesting packages
 
-::: {.panel-tabset}
-
+::: panel-tabset
 ### R
-```{.r}
+
+``` r
 #|eval: false
 library(forecast)    # OG package for time series forecasting
 library(stan4bart)   # full-on probabilistic, multilevel, model combination
 library(forecastHybrid)  # for model combination
 library(Mcomp)       # data from m competitions
 library(gpboost)     # xgboost-like, but probabilistic and multilevel
-
 ```
 
-
 ### Python
-```{.python}
+
+``` python
 #|eval: false
 import sktime   # for time series forecasting with sklearn-like interface
 import skpro    # for probabilistic forecasting 
 import gluonts  # for probabilistic forecasting, including deep-learning
 import ngboost  # xgboost-like, but probabilistic!
-
+import mapie    # model-agnostic, conformal prediction
+import mlforecast # machine learning forecasting
 ```
-
 :::
 
-## Example code
+## 
